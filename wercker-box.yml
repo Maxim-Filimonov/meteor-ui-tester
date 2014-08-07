@@ -55,7 +55,9 @@ script: |
   # Install meteorite
   sudo npm install -g meteorite
   type mrt || { echo "Meteorite not found after installation! Terminating..."; exit 1; }
-
+  
+  # Make tmp dir accessible by anyone
+  sudo chmod -R 777 tmp/
 env:
   RUBY_VERSION: "2.0.0"
   NODE_VERSION: "0.10.20"
