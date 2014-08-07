@@ -6,7 +6,6 @@ packages:
   - firefox
 keywords:
   - firefox
-  - ruby@2.0.0
   - meteorite
   - cucumber
   - xvfb
@@ -35,16 +34,7 @@ script: |
   sudo apt-get install git
   type git || { echo "Meteorite not found after installation! Terminating..."; exit 1; }
 
-  curl -L https://get.rvm.io | bash -s stable
   source /home/ubuntu/.bash_profile
-  rvm install 2.0.0
-  ruby -v
-  rvmsudo gem install cucumber --no-rdoc --no-ri
-  rvmsudo gem install selenium-webdriver --no-rdoc --no-ri
-  rvmsudo gem install capybara --no-rdoc --no-ri
-  rvmsudo gem install rspec --no-rdoc --no-ri
-  rvmsudo gem install launchy --no-rdoc --no-ri
-  rvmsudo gem install headless --no-rdoc --no-ri
 
   # Create and own /data directory
   sudo mkdir -p /data/db/
@@ -59,7 +49,6 @@ script: |
   # Make tmp dir accessible by anyone
   sudo chmod -R 777 tmp/
 env:
-  RUBY_VERSION: "2.0.0"
   NODE_VERSION: "0.10.20"
   METEOR_VERSION: "0.6.5.1"
   DISPLAY: ":99.0"
